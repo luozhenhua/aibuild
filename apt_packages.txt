@@ -1,0 +1,12 @@
+autoconf 
+automake 
+cmake 
+curl 
+git 
+g++ 
+libopencv-dev 
+libtool 
+make 
+vim 
+wget
+unzip

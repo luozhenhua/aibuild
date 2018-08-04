@@ -1,0 +1,15 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index d3fa946..ee337ed 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -67,8 +67,8 @@ endif()
+ 
+ ##############################################
+ 
+-# add_subdirectory(examples)
+-# add_subdirectory(benchmark)
++add_subdirectory(examples)
++add_subdirectory(benchmark)
+ add_subdirectory(src)
+ if(NOT ANDROID AND NOT IOS)
+ add_subdirectory(tools)
