@@ -1,6 +1,8 @@
 # Use an official Python runtime as a parent image
 FROM nxpml/armv8:lsdk1806_ml_baseline
 
+COPY qemu-aarch64-static /usr/bin/
+
 # Set the working directory to /app
 WORKDIR /app
 
@@ -15,15 +17,16 @@ ADD . /app
 #ENV DEBIAN_FRONTEND noninteractive
 
 #Install required Ubuntu packages
-RUN apt-get update && apt-get install -y --fix-missing $(awk '{print $1'} apt_packages.txt)
+RUN apt-get update && apt-get install -y --fix-missing autoconf automake cmake \
+    curl git g++ libopencv-dev libtool make vim wget unzip
 
 #Instal protobuf
 RUN wget https://github.com/google/protobuf/releases/download/v3.6.1/protobuf-cpp-3.6.1.tar.gz &&\
-    tar zxvf protobuf-cpp-3.6.1.tar.gz                                                        &&\
-    cd protobuf-3.6.1                                                                     &&\
-    ./configure                                                                               &&\
-    make -j 4                                                                                 &&\
-    make install                                                                              &&\
+    tar zxvf protobuf-cpp-3.6.1.tar.gz                                                         &&\
+    cd protobuf-3.6.1                                                                          &&\
+    ./configure                                                                                &&\
+    make -j 4                                                                                  &&\
+    make install                                                                               &&\
     ldconfig
 
 RUN rm -rf protobuf*

@@ -8,8 +8,8 @@ env:
     DOCKER_FILE: "Dockerfile"
     
     # Username of dockerhub 
-    DOCKERHUB_USER: "nxpml"
-    DOCKERHUB_PASSWD: "nxpml"
+    DOCKERHUB_USER: "zavierdockerhub"
+    DOCKERHUB_PASSWD: "zavierdocker"
 
 phases:
   install:
@@ -22,7 +22,7 @@ phases:
   pre_build:
     commands:
       # Login dockerhub
-      #- docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWD
+      - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWD
   build:
     commands:
       # Setup the docker cross build enrironment
