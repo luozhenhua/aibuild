@@ -5,7 +5,7 @@ FROM nxpml/armv8:lsdk1806_ml_baseline
 WORKDIR /app
 
 # wipe out previous content
-RUN rm -rf /app/*
+# RUN rm -rf /app/*
 
 # Copy the current directory contents into the container at /app
 ADD . /app
