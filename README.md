@@ -1,2 +1,2 @@
 # aidemo
-AI demo using Edgescale builder
+AI demo using Edgescale builder.
